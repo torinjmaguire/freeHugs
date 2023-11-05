@@ -1,0 +1,121 @@
+[gd_scene load_steps=14 format=3 uid="uid://bo8hvenw5lyuu"]
+
+[ext_resource type="PackedScene" uid="uid://dxp0bheywivcc" path="res://shelf_two.tscn" id="1_6abx5"]
+[ext_resource type="PackedScene" uid="uid://gxj71o33vdnv" path="res://shelf_one.tscn" id="2_fk44u"]
+[ext_resource type="PackedScene" uid="uid://co51krnpyokf6" path="res://toy_box.tscn" id="3_xqu7t"]
+[ext_resource type="PackedScene" uid="uid://xcnn3r4rpu2g" path="res://small_box.tscn" id="4_3ta7v"]
+[ext_resource type="PackedScene" uid="uid://damct7a8h75sx" path="res://medium_box.tscn" id="5_v427l"]
+[ext_resource type="PackedScene" uid="uid://gry1bvedq74p" path="res://small_pillar.tscn" id="6_f4sr4"]
+[ext_resource type="PackedScene" uid="uid://bbml6onqmx4d7" path="res://orb.tscn" id="7_taap0"]
+[ext_resource type="PackedScene" uid="uid://k8xmpm254o72" path="res://wall.tscn" id="8_7gwi1"]
+[ext_resource type="PackedScene" uid="uid://816a2moqoxpg" path="res://ramp.tscn" id="9_y23es"]
+[ext_resource type="PackedScene" uid="uid://d3k7d02vls2bd" path="res://huge_box.tscn" id="10_j3btn"]
+[ext_resource type="PackedScene" uid="uid://b3nqlorffruvo" path="res://big_pillar.tscn" id="11_60nbd"]
+[ext_resource type="PackedScene" uid="uid://drpf4tl0ltn4v" path="res://barrel.tscn" id="12_hakif"]
+[ext_resource type="PackedScene" uid="uid://bj6v6xcc5nq7n" path="res://player.tscn" id="13_kfil4"]
+
+[node name="main" type="Node"]
+
+[node name="mediumBox4" parent="." instance=ExtResource("5_v427l")]
+transform = Transform3D(1.00312, 0, 0, 0, 0.501558, 0, 0, 0, 1.00312, -28, 27.5062, 0)
+
+[node name="shelfTwo" parent="." instance=ExtResource("1_6abx5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 0, 0)
+
+[node name="shelfOne" parent="." instance=ExtResource("2_fk44u")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 0, 0)
+
+[node name="toyBox" parent="." instance=ExtResource("3_xqu7t")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 85.0118, 78, -1.99821)
+
+[node name="smallBox" parent="." instance=ExtResource("4_3ta7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 71.5006, 0)
+
+[node name="smallBox2" parent="." instance=ExtResource("4_3ta7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 71.5006, 6)
+
+[node name="smallBox3" parent="." instance=ExtResource("4_3ta7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 71.5006, -5)
+
+[node name="mediumBox" parent="." instance=ExtResource("5_v427l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 74.5, -3)
+
+[node name="smallPillar" parent="." instance=ExtResource("6_f4sr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 72.5, 2)
+
+[node name="orb" parent="." instance=ExtResource("7_taap0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 40.5, 0)
+
+[node name="wall" parent="." instance=ExtResource("8_7gwi1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 82, 43.5, 0)
+
+[node name="smallPillar2" parent="." instance=ExtResource("6_f4sr4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80, 42.5, -8)
+
+[node name="smallBox4" parent="." instance=ExtResource("4_3ta7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79, 41.5006, -5)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, -0.25, 0.433013, 0, 0.866025, 0.5, -0.5, -0.433013, 0.75, 64, 96.7741, 63)
+
+[node name="ramp" parent="." instance=ExtResource("9_y23es")]
+transform = Transform3D(-2.19104e-08, 0.409861, 0.601469, 1.265e-08, 0.7099, -0.347258, -0.578796, -7.03251e-16, -3.03583e-08, 12.6546, 48.1219, 4.23798)
+
+[node name="hugeBox" parent="." instance=ExtResource("10_j3btn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 10, 0)
+
+[node name="hugeBox2" parent="." instance=ExtResource("10_j3btn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -84, 10, 0)
+
+[node name="hugeBox3" parent="." instance=ExtResource("10_j3btn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34, 10, 0)
+
+[node name="bigPillar" parent="." instance=ExtResource("11_60nbd")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, -6, 33, 4)
+
+[node name="hugeBox4" parent="." instance=ExtResource("10_j3btn")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 72, 15, 32)
+
+[node name="barrel" parent="." instance=ExtResource("12_hakif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70, 15, 0)
+
+[node name="mediumBox2" parent="." instance=ExtResource("5_v427l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -67, 59.5, 0)
+
+[node name="mediumBox3" parent="." instance=ExtResource("5_v427l")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, -84, 61.5, -2.81257)
+
+[node name="smallBox5" parent="." instance=ExtResource("4_3ta7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89, 56.5006, 6)
+
+[node name="smallBox6" parent="." instance=ExtResource("4_3ta7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71, 56.5006, 6)
+
+[node name="barrel2" parent="." instance=ExtResource("12_hakif")]
+transform = Transform3D(0.5, 0, 0, 0, -6.55671e-08, 0.5, 0, -1.5, -2.18557e-08, -63, 6, 41)
+
+[node name="barrel3" parent="barrel2" instance=ExtResource("12_hakif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15, 0, 24)
+
+[node name="barrel2" parent="barrel2" instance=ExtResource("12_hakif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29, 0, -1)
+
+[node name="bigPillar2" parent="." instance=ExtResource("11_60nbd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 63, -4)
+
+[node name="bigPillar3" parent="." instance=ExtResource("11_60nbd")]
+transform = Transform3D(1, 0, 0, 0, 0.66, 0, 0, 0, 1, -11, 60.45, -4)
+
+[node name="bigPillar4" parent="." instance=ExtResource("11_60nbd")]
+transform = Transform3D(1, 0, 0, 0, 0.33, 0, 0, 0, 1, -16, 57.975, -4)
+
+[node name="orb2" parent="." instance=ExtResource("7_taap0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 25.5, 0)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("13_kfil4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 75, 0)
+speed = 30
+jump_impulse = 40
+
+[node name="Camera3D2" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(0.707107, -0.5, 0.5, 0, 0.707107, 0.707107, -0.707107, -0.5, 0.5, 10, 10, 10)

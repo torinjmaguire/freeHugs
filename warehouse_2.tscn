@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=3 uid="uid://csmdbv3hdhyn6"]
+
+[ext_resource type="PackedScene" uid="uid://xcnn3r4rpu2g" path="res://small_box.tscn" id="1_nnf7v"]
+[ext_resource type="PackedScene" uid="uid://bj6v6xcc5nq7n" path="res://player.tscn" id="2_f2pp2"]
+
+[node name="warehouse2" type="Node"]
+
+[node name="leftshelf" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -65, 50, 2.84124e-06)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="leftshelf"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, 49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 0, -49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, -49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11, 0, 49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+size = Vector3(24, 1, 100)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 20, 0)
+size = Vector3(10, 1, 100)
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, -45)
+size = Vector3(30, 1, 10)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 45)
+size = Vector3(30, 1, 10)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="leftshelf/CSGCombiner3D"]
+transform = Transform3D(0.999993, -0.00326483, 0.00188495, 0.0037699, 0.866019, -0.499997, -3.09086e-13, 0.5, 0.866025, 10, 0, -6)
+size = Vector3(10, 1, 80)
+
+[node name="smallBox" parent="leftshelf" instance=ExtResource("1_nnf7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -18.4994, 34)
+
+[node name="rightshelf" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 65, 50, -2.84124e-06)
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="rightshelf"]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="rightshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="rightshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, -49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="rightshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, -49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="rightshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14, 0, 49)
+size = Vector3(2, 100, 2)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="rightshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -20, 0)
+size = Vector3(24, 1, 100)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="rightshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0)
+size = Vector3(30, 1, 100)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="rightshelf/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -1, 30, -67)
+size = Vector3(10, 1, 40)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("2_f2pp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 36, 4)
+speed = 30
+jump_impulse = 40
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 6, 20)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.306187, 0.826296, -0.472742, -0.353553, 0.362372, 0.862373, 0.883883, 0.431186, 0.181186, 111, 115, 54)

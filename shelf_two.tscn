@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dxp0bheywivcc"]
+
+[node name="shelfTwo" type="Node3D"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="topPanel" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+size = Vector3(100, 1, 20)
+
+[node name="higherPanel" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 70, 0)
+size = Vector3(100, 1, 20)
+
+[node name="lowerPanel" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 40, 0)
+size = Vector3(100, 1, 20)
+
+[node name="shelfLeg4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 50, -9)
+size = Vector3(2, 100, 2)
+
+[node name="shelfLeg3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 50, 9)
+size = Vector3(2, 100, 2)
+
+[node name="shelfLeg2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 50, -9)
+size = Vector3(2, 100, 2)
+
+[node name="shelfLeg" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49, 50, 9)
+size = Vector3(2, 100, 2)
