@@ -43,9 +43,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 46, 74.5, -3)
 [node name="smallPillar" parent="." instance=ExtResource("6_f4sr4")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57, 72.5, 2)
 
-[node name="smallPillar3" parent="." instance=ExtResource("6_f4sr4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8953, 72.7863, 0.233768)
-
 [node name="orb" parent="." instance=ExtResource("7_taap0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88, 40.5, 0)
 
