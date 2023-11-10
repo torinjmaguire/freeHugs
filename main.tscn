@@ -28,9 +28,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49, 0, 0)
 [node name="toyBox" parent="." instance=ExtResource("3_xqu7t")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 85.0118, 78, -1.99821)
 
-[node name="smallBox" parent="." instance=ExtResource("4_3ta7v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 71.5006, 0)
-
 [node name="smallBox3" parent="." instance=ExtResource("4_3ta7v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 29, 71.5006, -5)
 
