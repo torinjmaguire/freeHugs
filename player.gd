@@ -25,7 +25,7 @@ func _physics_process(delta):
 
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-		$Pivot.look_at(position + direction, Vector3.UP)
+		$MeshInstance3D.look_at(position + direction, Vector3.UP)
 
 	# Ground Velocity
 	target_velocity.x = direction.x * speed
@@ -42,4 +42,9 @@ func _physics_process(delta):
 	if is_on_floor() and Input.is_action_just_pressed("jump"):
 		target_velocity.y = jump_impulse
 	
-	move_and_slide()
+	var collision = move_and_slide()
+	
+	if Input.is_action_pressed("interact"):
+		print("Interact pressed");
+		if collision:
+			print(collision.get_collider)
