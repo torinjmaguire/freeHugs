@@ -13,9 +13,9 @@ var target_velocity = Vector3.ZERO
 
 func _input(event):
 	if event.is_action_pressed("interact"):
-		print("Interact!")
-		if $RayCast3D.get_collider():
-			print($RayCast3D.get_collider().get_node("../..").get_name())
+		if $RayCast3D.get_collider() and !$RayCast3D.get_collider() is CSGCombiner3D:
+			$RayCast3D.get_collider().pushed(position)
+			
 		
 func _physics_process(delta):
 	var direction = Vector3.ZERO
