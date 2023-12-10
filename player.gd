@@ -7,10 +7,16 @@ extends CharacterBody3D
 #...
 # Vertical impulse applied to the character upon jumping in meters per second.
 @export var jump_impulse = 20
+var puzzleBoxCollider = null
 
 var target_velocity = Vector3.ZERO
 
-
+func _input(event):
+	if event.is_action_pressed("interact"):
+		if $RayCast3D.get_collider() and !$RayCast3D.get_collider() is CSGCombiner3D:
+			$RayCast3D.get_collider().pushed(position)
+			
+		
 func _physics_process(delta):
 	var direction = Vector3.ZERO
 
@@ -25,7 +31,8 @@ func _physics_process(delta):
 
 	if direction != Vector3.ZERO:
 		direction = direction.normalized()
-		$Pivot.look_at(position + direction, Vector3.UP)
+		$MeshInstance3D.look_at(position + direction, Vector3.UP)
+		$RayCast3D.look_at(position + direction, Vector3.UP)
 
 	# Ground Velocity
 	target_velocity.x = direction.x * speed

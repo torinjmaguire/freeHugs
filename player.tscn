@@ -1,27 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bj6v6xcc5nq7n"]
+[gd_scene load_steps=4 format=3 uid="uid://bj6v6xcc5nq7n"]
 
-[ext_resource type="Texture2D" uid="uid://baet51mxjhqcf" path="res://icon.svg" id="1_11m21"]
 [ext_resource type="Script" path="res://player.gd" id="1_l8wac"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_etbty"]
-size = Vector3(4, 6, 4)
+size = Vector3(2, 6, 2)
 
 [sub_resource type="BoxMesh" id="BoxMesh_6alpw"]
-size = Vector3(4, 6, 4)
+size = Vector3(2, 6, 2)
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_l8wac")
-
-[node name="Pivot" type="Node3D" parent="."]
-
-[node name="Sprite3D" type="Sprite3D" parent="Pivot"]
-transform = Transform3D(4, 0, 0, 0, 6, 0, 0, 0, 4, 0, 0, 0)
-billboard = 2
-texture = ExtResource("1_11m21")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_etbty")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("BoxMesh_6alpw")
+
+[node name="RayCast3D" type="RayCast3D" parent="."]
+target_position = Vector3(0, 0, -3)

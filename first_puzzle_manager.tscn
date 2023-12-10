@@ -1,53 +1,56 @@
-[gd_scene load_steps=3 format=3 uid="uid://cds1w5h6kqrca"]
+[gd_scene load_steps=2 format=3 uid="uid://cds1w5h6kqrca"]
 
-[ext_resource type="PackedScene" uid="uid://cx4wr8buatlkg" path="res://small_ball.tscn" id="1_ofc2i"]
-[ext_resource type="PackedScene" uid="uid://dr10x1mvd36sg" path="res://long_ball.tscn" id="2_wbf5w"]
+[ext_resource type="PackedScene" uid="uid://bj6cb7k13epr" path="res://puzzle_box.tscn" id="1_4gpwm"]
 
 [node name="FirstPuzzleManager" type="Node3D"]
 
-[node name="SmallPillar" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -1)
+[node name="PuzzleBox" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -2)
 
-[node name="SmallPillar2" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -1)
+[node name="PuzzleBox2" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, -2)
 
-[node name="SmallPillar3" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, -3)
+[node name="PuzzleBox3" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -2)
 
-[node name="SmallPillar4" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, -5)
+[node name="PuzzleBox4" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, -6)
 
-[node name="SmallPillar5" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, -5)
+[node name="PuzzleBox5" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, -10)
 
-[node name="SmallPillar6" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 1, -5)
+[node name="PuzzleBox6" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 2, -10)
 
-[node name="SmallPillar7" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, -1)
+[node name="PuzzleBox7" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, -10)
 
-[node name="SmallPillar8" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 1, 3)
+[node name="PuzzleBox8" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, -2)
 
-[node name="SmallPillar9" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1, 3)
+[node name="PuzzleBox9" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 2, 6)
 
-[node name="SmallPillar10" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 3)
+[node name="PuzzleBox10" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 8, 2, -8)
 
-[node name="SmallPillar11" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 3)
+[node name="PuzzleBox11" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 2, 10, 2, 0)
 
-[node name="SmallPillar12" parent="." instance=ExtResource("1_ofc2i")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 3)
+[node name="PuzzleBox12" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 6)
 
-[node name="MediumPillar" parent="." instance=ExtResource("2_wbf5w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 1, 1)
+[node name="PuzzleBox13" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 6)
 
-[node name="MediumPillar2" parent="." instance=ExtResource("2_wbf5w")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 1, 5)
+[node name="PuzzleBox14" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 2, 6)
 
-[node name="MediumPillar3" parent="." instance=ExtResource("2_wbf5w")]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5, 1, 0)
+[node name="PuzzleBox15" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 6)
 
-[node name="wideBall" type="Node3D" parent="."]
+[node name="PuzzleBox16" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -4, 2, 10)
+
+[node name="PuzzleBox17" parent="." instance=ExtResource("1_4gpwm")]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 1, -8, 2, 2)
