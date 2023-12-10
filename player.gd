@@ -50,3 +50,8 @@ func _physics_process(delta):
 		target_velocity.y = jump_impulse
 	
 	move_and_slide()
+	
+	for c in get_slide_collision_count():
+		var collided = get_slide_collision(c).get_collider()
+		if collided.get_parent().get_name() == "smallPillar":
+			get_tree().change_scene_to_packed(Singleton.warehouse2)

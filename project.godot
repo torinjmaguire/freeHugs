@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Free Hugs"
-run/main_scene="res://first_puzzle_test.tscn"
+run/main_scene="res://warehouse1.tscn"
 config/features=PackedStringArray("4.1", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Singleton="*res://singleton.gd"
 
 [input]
 
