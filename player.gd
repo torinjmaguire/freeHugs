@@ -54,4 +54,4 @@ func _physics_process(delta):
 	for c in get_slide_collision_count():
 		var collided = get_slide_collision(c).get_collider()
 		if collided.get_parent().get_name() == "smallPillar":
-			get_tree().change_scene_to_packed(Singleton.warehouse2)
+			get_tree().change_scene_to_file("res://warehouse2.tscn")

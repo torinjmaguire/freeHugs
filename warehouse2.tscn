@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://xcnn3r4rpu2g" path="res://small_box.tscn" id="1_nnf7v"]
 [ext_resource type="PackedScene" uid="uid://bj6v6xcc5nq7n" path="res://player.tscn" id="2_f2pp2"]
 
-[node name="warehouse2" type="Node"]
+[node name="Warehouse2" type="Node3D"]
 
 [node name="leftshelf" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -65, 50, 2.84124e-06)
@@ -84,11 +84,8 @@ size = Vector3(30, 1, 100)
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -1, 30, -67)
 size = Vector3(10, 1, 40)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("2_f2pp2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 36, 4)
-
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 6, 20)
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.306187, 0.826296, -0.472742, -0.353553, 0.362372, 0.862373, 0.883883, 0.431186, 0.181186, 111, 115, 54)
+transform = Transform3D(-0.306187, 0.826296, -0.472742, -0.353553, 0.362372, 0.862373, 0.883883, 0.431187, 0.181186, 111, 115, 54)
+
+[node name="Player" parent="." instance=ExtResource("2_f2pp2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 48, 93.5, 0)

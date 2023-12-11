@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://drpf4tl0ltn4v" path="res://barrel.tscn" id="12_hakif"]
 [ext_resource type="PackedScene" uid="uid://bj6v6xcc5nq7n" path="res://player.tscn" id="13_kfil4"]
 
-[node name="main" type="Node"]
+[node name="Warehouse1" type="Node3D"]
 
 [node name="mediumBox4" parent="." instance=ExtResource("5_v427l")]
 transform = Transform3D(1.00312, 0, 0, 0, 0.501558, 0, 0, 0, 1.00312, -28, 27.5062, 0)
@@ -112,10 +112,5 @@ transform = Transform3D(1, 0, 0, 0, 0.33, 0, 0, 0, 1, -16, 57.975, -4)
 [node name="orb2" parent="." instance=ExtResource("7_taap0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77, 25.5, 0)
 
-[node name="CharacterBody3D" parent="." instance=ExtResource("13_kfil4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85, 75, 0)
-speed = 30
-jump_impulse = 40
-
-[node name="Camera3D2" type="Camera3D" parent="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 0.866026, 0.5, 0, -0.5, 0.866026, 0, 10, 20)
+[node name="Player" parent="." instance=ExtResource("13_kfil4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86, 74, 0)
