@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://bo8hvenw5lyuu"]
+[gd_scene load_steps=15 format=3 uid="uid://bo8hvenw5lyuu"]
 
 [ext_resource type="PackedScene" uid="uid://dxp0bheywivcc" path="res://shelf_two.tscn" id="1_6abx5"]
+[ext_resource type="Script" path="res://warehouse1.gd" id="1_8e6g2"]
 [ext_resource type="PackedScene" uid="uid://gxj71o33vdnv" path="res://shelf_one.tscn" id="2_fk44u"]
 [ext_resource type="PackedScene" uid="uid://co51krnpyokf6" path="res://toy_box.tscn" id="3_xqu7t"]
 [ext_resource type="PackedScene" uid="uid://xcnn3r4rpu2g" path="res://small_box.tscn" id="4_3ta7v"]
@@ -15,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://bj6v6xcc5nq7n" path="res://player.tscn" id="13_kfil4"]
 
 [node name="Warehouse1" type="Node3D"]
+script = ExtResource("1_8e6g2")
 
 [node name="mediumBox4" parent="." instance=ExtResource("5_v427l")]
 transform = Transform3D(1.00312, 0, 0, 0, 0.501558, 0, 0, 0, 1.00312, -28, 27.5062, 0)

@@ -11,6 +11,16 @@ var puzzleBoxCollider = null
 
 var target_velocity = Vector3.ZERO
 
+func save():
+	var save_dict = {
+		"filename" : get_scene_file_path(),
+		"parent" : get_parent().get_path(),
+		"pos_x" : position.x,
+		"pos_y" : position.y,
+		"pos_z" : position.z,
+	}
+	return save_dict
+
 func _input(event):
 	if event.is_action_pressed("interact"):
 		if $RayCast3D.get_collider() and !$RayCast3D.get_collider() is CSGCombiner3D:

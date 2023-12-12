@@ -8,7 +8,7 @@ size = Vector3(2, 6, 2)
 [sub_resource type="BoxMesh" id="BoxMesh_6alpw"]
 size = Vector3(2, 6, 2)
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D" groups=["Persist"]]
 script = ExtResource("1_l8wac")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
