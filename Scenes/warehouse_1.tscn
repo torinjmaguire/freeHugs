@@ -1,0 +1,64 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm510ym0spcda"]
+
+[ext_resource type="PackedScene" uid="uid://b682qra4u6fph" path="res://Scenes/box.tscn" id="1_b35a0"]
+
+[node name="Warehouse 1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
+
+[node name="Shelves" type="CSGCombiner3D" parent="."]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
+use_collision = true
+
+[node name="Leg 3" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+size = Vector3(1, 100, 1)
+
+[node name="Leg 4" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 50, 0)
+size = Vector3(1, 100, 1)
+
+[node name="Leg 5" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 50, 30)
+size = Vector3(1, 100, 1)
+
+[node name="Leg 6" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 30)
+size = Vector3(1, 100, 1)
+
+[node name="Leg 2" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 50, 0)
+size = Vector3(1, 100, 1)
+
+[node name="Leg 1" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 50, 30)
+size = Vector3(1, 100, 1)
+
+[node name="Shelf 1" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 30, 15)
+size = Vector3(60, 1, 30)
+
+[node name="Shelf 3" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 60, 15)
+size = Vector3(60, 1, 30)
+
+[node name="Shelf Top 2" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 98, 15)
+size = Vector3(60, 1, 30)
+
+[node name="Shelf Top 1" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 98, 15)
+size = Vector3(60, 1, 30)
+
+[node name="Shelf 2" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 45, 15)
+size = Vector3(60, 1, 30)
+
+[node name="Shelf 4" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 80, 15)
+size = Vector3(60, 1, 30)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 133, 0)
+
+[node name="Box" parent="." instance=ExtResource("1_b35a0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26, 81, -5)
