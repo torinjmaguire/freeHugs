@@ -1,12 +1,12 @@
 [gd_scene load_steps=3 format=3 uid="uid://duq80xfnqgycn"]
 
-[ext_resource type="PackedScene" uid="uid://cm510ym0spcda" path="res://Scenes/warehouse_1.tscn" id="1_tvnim"]
-[ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="2_lck3e"]
+[ext_resource type="PackedScene" uid="uid://cm510ym0spcda" path="res://Scenes/warehouse_1.tscn" id="1_2r8xe"]
+[ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="2_w5inj"]
 
 [node name="Main" type="Node3D"]
 
-[node name="Warehouse 1" parent="." instance=ExtResource("1_tvnim")]
+[node name="Warehouse 1" parent="." instance=ExtResource("1_2r8xe")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.149429, 0, 15.0009)
 
-[node name="Player" parent="." instance=ExtResource("2_lck3e")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 84, 1)
+[node name="Player" parent="." instance=ExtResource("2_w5inj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 82, 1)
