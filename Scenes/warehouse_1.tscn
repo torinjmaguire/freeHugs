@@ -1,14 +1,30 @@
-[gd_scene load_steps=6 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=10 format=3 uid="uid://cm510ym0spcda"]
 
-[ext_resource type="PackedScene" uid="uid://b682qra4u6fph" path="res://Scenes/box.tscn" id="1_b35a0"]
-[ext_resource type="PackedScene" uid="uid://bny708kter66w" path="res://Scenes/tall_rectangle.tscn" id="2_6m36p"]
-[ext_resource type="PackedScene" uid="uid://b0hfc4fuwslcl" path="res://Scenes/rectangle.tscn" id="2_mhqo1"]
+[ext_resource type="Script" path="res://Scripts/SweepPivot.gd" id="4_mgqfg"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_1p34l"]
+height = 10.0
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_i8r75"]
 height = 10.0
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_1p34l"]
-height = 10.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_bwx1c"]
+size = Vector3(8, 8, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_m48u4"]
+size = Vector3(8, 8, 8)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_116in"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s5gh8"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4cbl4"]
+size = Vector3(2, 4, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lnsgn"]
+size = Vector3(2, 4, 2)
 
 [node name="Warehouse 1" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
@@ -18,82 +34,125 @@ transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 
 use_collision = true
 
 [node name="Leg 3" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 8)
 size = Vector3(1, 100, 1)
 
 [node name="Leg 4" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 50, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 50, 8)
 size = Vector3(1, 100, 1)
 
 [node name="Leg 5" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 50, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 60, 50, 22)
 size = Vector3(1, 100, 1)
 
 [node name="Leg 6" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 50, 22)
 size = Vector3(1, 100, 1)
 
 [node name="Leg 2" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 50, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 50, 8)
 size = Vector3(1, 100, 1)
 
 [node name="Leg 1" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 50, 30)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -60, 50, 22)
 size = Vector3(1, 100, 1)
 
 [node name="Shelf 1" type="CSGBox3D" parent="Shelves"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 30, 15)
-size = Vector3(60, 1, 30)
+size = Vector3(60, 1, 15)
 
 [node name="Shelf 3" type="CSGBox3D" parent="Shelves"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 60, 15)
-size = Vector3(60, 1, 30)
+size = Vector3(60, 1, 15)
 
-[node name="Shelf Top 2" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 98, 15)
-size = Vector3(60, 1, 30)
-
-[node name="Shelf Top 1" type="CSGBox3D" parent="Shelves"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 98, 15)
-size = Vector3(60, 1, 30)
+[node name="Shelf Top" type="CSGBox3D" parent="Shelves"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96007e-07, 98, 15)
+size = Vector3(120, 1, 15)
 
 [node name="Shelf 2" type="CSGBox3D" parent="Shelves"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 45, 15)
-size = Vector3(60, 1, 30)
+size = Vector3(60, 1, 15)
 
 [node name="Shelf 4" type="CSGBox3D" parent="Shelves"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30, 80, 15)
-size = Vector3(60, 1, 30)
+size = Vector3(60, 1, 15)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, -3.09086e-08, 0.707107, -0.612372, 0.5, 0.612372, -0.353553, -0.866025, 0.353553, 37, 133, 29)
 
-[node name="Box" parent="." instance=ExtResource("1_b35a0")]
-transform = Transform3D(12, 0, 0, 0, 12, 0, 0, 0, 12, 26, 86.5, -24)
+[node name="SweepPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -31, 98, -15)
+script = ExtResource("4_mgqfg")
 
-[node name="Box2" parent="." instance=ExtResource("1_b35a0")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12, 82, -7)
+[node name="Sweeper" type="CharacterBody3D" parent="SweepPivot"]
+transform = Transform3D(-1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 0, 0, 4, 0, -66, 0)
+metadata/_edit_group_ = true
 
-[node name="Box3" parent="." instance=ExtResource("1_b35a0")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12, 82, -19)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="SweepPivot/Sweeper"]
+shape = SubResource("CylinderShape3D_1p34l")
 
-[node name="Box4" parent="." instance=ExtResource("1_b35a0")]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 12, 82, -13)
-
-[node name="Tall Rectangle" parent="." instance=ExtResource("2_6m36p")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -4, 69.5, -26)
-
-[node name="Rectangle" parent="." instance=ExtResource("2_mhqo1")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -11, 66.5, -24)
-
-[node name="Box5" parent="." instance=ExtResource("1_b35a0")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -17, 63.5, -22)
-
-[node name="Sweeper" type="RigidBody3D" parent="."]
-transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, -30, 31, -1)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Sweeper"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SweepPivot/Sweeper"]
 mesh = SubResource("CylinderMesh_i8r75")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Sweeper"]
-shape = SubResource("CylinderShape3D_1p34l")
+[node name="Static Box" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 84.5, -18)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Static Box"]
+shape = SubResource("BoxShape3D_bwx1c")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Static Box"]
+mesh = SubResource("BoxMesh_m48u4")
+
+[node name="Push Box" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -15)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Push Box"]
+shape = SubResource("BoxShape3D_116in")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Push Box"]
+mesh = SubResource("BoxMesh_s5gh8")
+
+[node name="Push Box2" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -19)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Push Box2"]
+shape = SubResource("BoxShape3D_116in")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Push Box2"]
+mesh = SubResource("BoxMesh_s5gh8")
+
+[node name="Push Box3" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -11)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Push Box3"]
+shape = SubResource("BoxShape3D_116in")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Push Box3"]
+mesh = SubResource("BoxMesh_s5gh8")
+
+[node name="Starting Box" type="CSGCombiner3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 81, -15)
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Starting Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, -2)
+size = Vector3(4, 6, 4)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Starting Box"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.49435, -1.33929)
+operation = 2
+size = Vector3(3.5, 5.5, 2.82141)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Starting Box"]
+transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.76771, 2.40046, 1.47716)
+size = Vector3(0.2, 6, 3.5)
+
+[node name="Small Rectangle" type="CharacterBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Small Rectangle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 82.5, -11)
+mesh = SubResource("BoxMesh_4cbl4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Small Rectangle"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 82.5, -11)
+shape = SubResource("BoxShape3D_lnsgn")
