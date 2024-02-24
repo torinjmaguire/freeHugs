@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=30 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="2_p47x5"]
+[ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_uy8pk"]
 [ext_resource type="Script" path="res://Scripts/Collectable.gd" id="3_tyjyy"]
 [ext_resource type="Script" path="res://Scripts/SweepPivot.gd" id="4_mgqfg"]
 
@@ -124,15 +125,8 @@ size = Vector3(3.5, 5.5, 2.82141)
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.76771, 2.40046, 1.47716)
 size = Vector3(0.2, 6, 3.5)
 
-[node name="Push Box3" type="CharacterBody3D" parent="Fourth level"]
+[node name="Pushable Box" parent="Fourth level" instance=ExtResource("2_uy8pk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -9)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Push Box3"]
-shape = SubResource("BoxShape3D_116in")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Fourth level/Push Box3"]
-mesh = SubResource("BoxMesh_s5gh8")
 
 [node name="Push Box2" type="CharacterBody3D" parent="Fourth level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -15)
@@ -413,6 +407,11 @@ size = Vector3(60, 1, 15)
 [node name="Shelf 3" type="CSGBox3D" parent="Shelves"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 60, 15)
 size = Vector3(60, 1, 15)
+
+[node name="Box Pit" type="CSGBox3D" parent="Shelves/Shelf 3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, -2)
+operation = 2
+size = Vector3(3, 1, 3)
 
 [node name="Shelf Top" type="CSGBox3D" parent="Shelves"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.96007e-07, 98, 15)
