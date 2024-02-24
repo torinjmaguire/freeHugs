@@ -1,4 +1,4 @@
 extends Area3D
 
-func _on_body_entered(body):
+func _on_body_entered(_body):
 	self.queue_free()

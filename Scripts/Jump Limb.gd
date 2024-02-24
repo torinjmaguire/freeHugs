@@ -8,6 +8,6 @@ func _ready():
 	parent = self.get_parent()
 
 # Handle jump.
-func _physics_process(delta):
+func _physics_process(_delta):
 	if Input.is_action_just_pressed("ui_accept") and parent.is_on_floor():
 		parent.velocity.y = JUMP_VELOCITY
