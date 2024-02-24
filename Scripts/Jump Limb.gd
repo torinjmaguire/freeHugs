@@ -1,7 +1,6 @@
 extends Node3D
 
-const JUMP_VELOCITY = 20
-
+const JUMP_VELOCITY = 16
 var parent: CharacterBody3D
 
 func _ready():
