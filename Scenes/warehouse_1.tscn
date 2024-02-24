@@ -285,10 +285,9 @@ mesh = SubResource("BoxMesh_ux3x5")
 shape = SubResource("BoxShape3D_fqtxv")
 
 [node name="Medium Rectangle2" type="StaticBody3D" parent="First level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 31, -13)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 36.5, -15)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="First level/Medium Rectangle2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 5.5, -2)
 mesh = SubResource("BoxMesh_bjkuk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="First level/Medium Rectangle2"]
