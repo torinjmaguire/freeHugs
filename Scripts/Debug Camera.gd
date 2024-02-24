@@ -15,7 +15,6 @@ func _input(event):
 	if event is InputEventMouseMotion and dragging:
 		rot_x = event.relative.x
 		rot_y = event.relative.y
-		tran
 
 func _ready():
 	if OS.is_debug_build():
