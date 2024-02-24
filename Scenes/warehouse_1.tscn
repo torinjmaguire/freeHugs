@@ -1,7 +1,6 @@
-[gd_scene load_steps=30 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=29 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="2_p47x5"]
-[ext_resource type="Script" path="res://Scripts/Jump Limb.gd" id="3_kefdh"]
 [ext_resource type="Script" path="res://Scripts/Collectable.gd" id="3_tyjyy"]
 [ext_resource type="Script" path="res://Scripts/SweepPivot.gd" id="4_mgqfg"]
 
@@ -436,9 +435,6 @@ transform = Transform3D(0.707107, -3.09086e-08, 0.707107, -0.612372, 0.5, 0.6123
 
 [node name="Player" parent="." instance=ExtResource("2_p47x5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 82.2444, -16.2128)
-
-[node name="Jump Limb" type="Node3D" parent="Player"]
-script = ExtResource("3_kefdh")
 
 [connection signal="body_entered" from="Fourth level/Collectable3" to="Fourth level/Collectable3" method="_on_body_entered"]
 [connection signal="body_entered" from="Second level/Collectable" to="Second level/Collectable" method="_on_body_entered"]
