@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=30 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="2_p47x5"]
 [ext_resource type="Script" path="res://Scripts/Jump Limb.gd" id="3_kefdh"]
@@ -8,7 +8,10 @@
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ub6o"]
 radius = 1.0
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5igwj"]
+
 [sub_resource type="SphereMesh" id="SphereMesh_kujh8"]
+material = SubResource("StandardMaterial3D_5igwj")
 
 [sub_resource type="BoxMesh" id="BoxMesh_4cbl4"]
 size = Vector3(2, 4, 2)
@@ -28,17 +31,17 @@ size = Vector3(8, 8, 8)
 [sub_resource type="BoxMesh" id="BoxMesh_m48u4"]
 size = Vector3(8, 8, 8)
 
-[sub_resource type="BoxMesh" id="BoxMesh_jw6jm"]
-size = Vector3(6, 18, 6)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_30cm0"]
-size = Vector3(6, 18, 6)
-
 [sub_resource type="BoxMesh" id="BoxMesh_usk2f"]
 size = Vector3(6, 6, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnv0j"]
 size = Vector3(6, 6, 6)
+
+[sub_resource type="BoxMesh" id="BoxMesh_jw6jm"]
+size = Vector3(6, 18, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_30cm0"]
+size = Vector3(6, 18, 6)
 
 [sub_resource type="BoxMesh" id="BoxMesh_bjkuk"]
 size = Vector3(6, 12, 6)
@@ -85,8 +88,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 [node name="Fourth level" type="Node3D" parent="."]
 
 [node name="Collectable3" type="Area3D" parent="Fourth level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43, 81.5, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 81.5, -19)
 script = ExtResource("3_tyjyy")
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Collectable3"]
 shape = SubResource("SphereShape3D_5ub6o")
@@ -95,7 +99,8 @@ shape = SubResource("SphereShape3D_5ub6o")
 mesh = SubResource("SphereMesh_kujh8")
 
 [node name="Tiny Rectangle" type="StaticBody3D" parent="Fourth level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35, 82.5, -11)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 82.5, -8.52035)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Fourth level/Tiny Rectangle"]
 mesh = SubResource("BoxMesh_4cbl4")
@@ -121,7 +126,8 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.76771, 2
 size = Vector3(0.2, 6, 3.5)
 
 [node name="Push Box3" type="CharacterBody3D" parent="Fourth level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -9)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Push Box3"]
 shape = SubResource("BoxShape3D_116in")
@@ -130,7 +136,8 @@ shape = SubResource("BoxShape3D_116in")
 mesh = SubResource("BoxMesh_s5gh8")
 
 [node name="Push Box2" type="CharacterBody3D" parent="Fourth level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -20)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -15)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Push Box2"]
 shape = SubResource("BoxShape3D_116in")
@@ -139,7 +146,8 @@ shape = SubResource("BoxShape3D_116in")
 mesh = SubResource("BoxMesh_s5gh8")
 
 [node name="Push Box" type="CharacterBody3D" parent="Fourth level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -15)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -12)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Push Box"]
 shape = SubResource("BoxShape3D_116in")
@@ -148,7 +156,7 @@ shape = SubResource("BoxShape3D_116in")
 mesh = SubResource("BoxMesh_s5gh8")
 
 [node name="Big Box" type="StaticBody3D" parent="Fourth level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 84.5, -18)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 84.5, -18.4925)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Big Box"]
 shape = SubResource("BoxShape3D_bwx1c")
@@ -156,10 +164,21 @@ shape = SubResource("BoxShape3D_bwx1c")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Fourth level/Big Box"]
 mesh = SubResource("BoxMesh_m48u4")
 
+[node name="Small Rectangle" type="StaticBody3D" parent="Fourth level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 83.5, -19.4925)
+metadata/_edit_group_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Fourth level/Small Rectangle"]
+mesh = SubResource("BoxMesh_usk2f")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Small Rectangle"]
+shape = SubResource("BoxShape3D_xnv0j")
+
 [node name="Third level" type="Node3D" parent="."]
 
 [node name="Big Rectangle" type="StaticBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4, 69.5, -19)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Third level/Big Rectangle"]
 mesh = SubResource("BoxMesh_jw6jm")
@@ -169,6 +188,7 @@ shape = SubResource("BoxShape3D_30cm0")
 
 [node name="Small Rectangle" type="StaticBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 63.5, -16)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Third level/Small Rectangle"]
 mesh = SubResource("BoxMesh_usk2f")
@@ -178,6 +198,7 @@ shape = SubResource("BoxShape3D_xnv0j")
 
 [node name="Medium Rectangle" type="StaticBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11, 66.5, -18)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Third level/Medium Rectangle"]
 mesh = SubResource("BoxMesh_bjkuk")
@@ -187,6 +208,7 @@ shape = SubResource("BoxShape3D_y4jgv")
 
 [node name="Push Box4" type="CharacterBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -42, 61.5, -16)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Third level/Push Box4"]
 shape = SubResource("BoxShape3D_116in")
@@ -196,6 +218,7 @@ mesh = SubResource("BoxMesh_s5gh8")
 
 [node name="Push Box5" type="CharacterBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 61.5, -10)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Third level/Push Box5"]
 shape = SubResource("BoxShape3D_116in")
@@ -205,6 +228,7 @@ mesh = SubResource("BoxMesh_s5gh8")
 
 [node name="Big Box2" type="StaticBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -51, 64.5, -18)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Third level/Big Box2"]
 shape = SubResource("BoxShape3D_bwx1c")
@@ -214,6 +238,7 @@ mesh = SubResource("BoxMesh_m48u4")
 
 [node name="Rope Box" type="StaticBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 63.5, -19)
+metadata/_edit_group_ = true
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Third level/Rope Box"]
 mesh = SubResource("BoxMesh_tc076")
@@ -410,7 +435,7 @@ size = Vector3(30, 1, 5)
 transform = Transform3D(0.707107, -3.09086e-08, 0.707107, -0.612372, 0.5, 0.612372, -0.353553, -0.866025, 0.353553, 37, 133, 29)
 
 [node name="Player" parent="." instance=ExtResource("2_p47x5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 82.2444, -16)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 82.2444, -16.2128)
 
 [node name="Jump Limb" type="Node3D" parent="Player"]
 script = ExtResource("3_kefdh")
