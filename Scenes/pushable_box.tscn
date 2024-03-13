@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://rir7r2m4d14d"]
+
+[ext_resource type="Script" path="res://Scripts/pushable_box.gd" id="1_x8foh"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_116in"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_s5gh8"]
+size = Vector3(2, 2, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_6ro0x"]
+size = Vector3(3, 2, 3)
+
+[node name="Pushable Box" type="CharacterBody3D"]
+script = ExtResource("1_x8foh")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_116in")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_s5gh8")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("BoxShape3D_6ro0x")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
