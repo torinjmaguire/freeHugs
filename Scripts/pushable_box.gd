@@ -32,5 +32,5 @@ func _physics_process(delta):
         print(deltaVector)
         print(directionVector)
 
-        var tween = self.create_tween()
+        var tween = create_tween()
         tween.tween_property(self, "position", position + directionVector, 0.3)
