@@ -1,9 +1,9 @@
 [gd_scene load_steps=30 format=3 uid="uid://cm510ym0spcda"]
 
-[ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="2_p47x5"]
-[ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_uy8pk"]
-[ext_resource type="Script" path="res://Scripts/Collectable.gd" id="3_tyjyy"]
-[ext_resource type="Script" path="res://Scripts/SweepPivot.gd" id="4_mgqfg"]
+[ext_resource type="Script" path="res://Scripts/Collectable.gd" id="1_io64e"]
+[ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
+[ext_resource type="Script" path="res://Scripts/SweepPivot.gd" id="3_eu65r"]
+[ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ub6o"]
 radius = 1.0
@@ -89,7 +89,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 15)
 
 [node name="Collectable3" type="Area3D" parent="Fourth level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16, 81.5, -19)
-script = ExtResource("3_tyjyy")
+script = ExtResource("1_io64e")
 metadata/_edit_group_ = true
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Collectable3"]
@@ -125,13 +125,13 @@ size = Vector3(3.5, 5.5, 2.82141)
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.76771, 2.40046, 1.47716)
 size = Vector3(0.2, 6, 3.5)
 
-[node name="Pushable Box" parent="Fourth level" instance=ExtResource("2_uy8pk")]
+[node name="Pushable Box" parent="Fourth level" instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -9)
 
-[node name="Pushable Box2" parent="Fourth level" instance=ExtResource("2_uy8pk")]
+[node name="Pushable Box2" parent="Fourth level" instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -12)
 
-[node name="Pushable Box3" parent="Fourth level" instance=ExtResource("2_uy8pk")]
+[node name="Pushable Box3" parent="Fourth level" instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -15)
 
 [node name="Big Box" type="StaticBody3D" parent="Fourth level"]
@@ -229,7 +229,7 @@ shape = SubResource("BoxShape3D_s588o")
 
 [node name="Collectable" type="Area3D" parent="Second level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 46.5, -15)
-script = ExtResource("3_tyjyy")
+script = ExtResource("1_io64e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Second level/Collectable"]
 shape = SubResource("SphereShape3D_5ub6o")
@@ -257,7 +257,7 @@ size = Vector3(2, 2, 2)
 
 [node name="Collectable2" type="Area3D" parent="First level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -58, 31.5, -15)
-script = ExtResource("3_tyjyy")
+script = ExtResource("1_io64e")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="First level/Collectable2"]
 shape = SubResource("SphereShape3D_5ub6o")
@@ -267,7 +267,7 @@ mesh = SubResource("SphereMesh_kujh8")
 
 [node name="SweepPivot" type="Marker3D" parent="First level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 98, -15)
-script = ExtResource("4_mgqfg")
+script = ExtResource("3_eu65r")
 
 [node name="Sweeper" type="CharacterBody3D" parent="First level/SweepPivot"]
 transform = Transform3D(-1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 0, 0, 4, 0, -66, 0)
@@ -419,7 +419,7 @@ size = Vector3(30, 1, 5)
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.707107, -3.09086e-08, 0.707107, -0.612372, 0.5, 0.612372, -0.353553, -0.866025, 0.353553, 37, 133, 29)
 
-[node name="Player" parent="." instance=ExtResource("2_p47x5")]
+[node name="Player" parent="." instance=ExtResource("4_fr6vk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 82.2444, -16.2128)
 
 [connection signal="body_entered" from="Fourth level/Collectable3" to="Fourth level/Collectable3" method="_on_body_entered"]
