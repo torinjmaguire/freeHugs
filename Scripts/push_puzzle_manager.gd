@@ -1,6 +1,10 @@
 extends Node3D
 
-@export var puzzleGrid: Resource
+@export var puzzleGrid: Array
 
-func _ready():
-	puzzleGrid.initialize_grid(10, 10)
+func _init():
+	importGrid()
+
+func importGrid():
+	var puzzleGridData = preload("res://Resources/W2_push_puzzle.csv")
+	puzzleGrid = puzzleGridData.records

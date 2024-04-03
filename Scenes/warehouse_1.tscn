@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=31 format=3 uid="uid://cm510ym0spcda"]
 
-[ext_resource type="Script" path="res://Scripts/Collectable.gd" id="1_io64e"]
+[ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_io64e"]
 [ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
+[ext_resource type="PackedScene" uid="uid://bxcaj5y3pa8c8" path="res://Scenes/push_puzzle_manager.tscn" id="2_w747d"]
 [ext_resource type="Script" path="res://Scripts/SweepPivot.gd" id="3_eu65r"]
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
 
@@ -124,6 +125,8 @@ size = Vector3(3.5, 5.5, 2.82141)
 [node name="CSGBox3D3" type="CSGBox3D" parent="Fourth level/Starting Box"]
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.76771, 2.40046, 1.47716)
 size = Vector3(0.2, 6, 3.5)
+
+[node name="PushPuzzleManager" parent="Fourth level" instance=ExtResource("2_w747d")]
 
 [node name="Pushable Box" parent="Fourth level" instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -9)
