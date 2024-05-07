@@ -11,8 +11,12 @@ config_version=5
 [application]
 
 config/name="Free Hugs"
-run/main_scene="res://Scenes/warehouse_1.tscn"
+run/main_scene="res://Scenes/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+
+[autoload]
+
+LevelManager="*res://Scripts/level_manager.gd"
 
 [display]
 

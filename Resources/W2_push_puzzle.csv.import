@@ -1,18 +1,17 @@
 [remap]
 
-importer="com.timothyqiu.godot-csv-importer"
-type="Resource"
+importer="csv_translation"
+type="Translation"
 uid="uid://bdk0p7yscv5qo"
-path="res://.godot/imported/W2_push_puzzle.csv-24e8aa4973f29ade8594eb5d48523467.res"
 
 [deps]
 
+files=["res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation"]
+
 source_file="res://Resources/W2_push_puzzle.csv"
-dest_files=["res://.godot/imported/W2_push_puzzle.csv-24e8aa4973f29ade8594eb5d48523467.res"]
+dest_files=["res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation", "res://Resources/W2_push_puzzle.1.translation"]
 
 [params]
 
+compress=true
 delimiter=0
-headers=false
-detect_numbers=true
-force_float=true
