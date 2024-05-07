@@ -4,10 +4,10 @@ extends CharacterBody3D
 # Pressing e signals to the nearby object
 # Object is pushed if possible in a cardinal direction
 
-# Add interact mechanic to emit signal from player
 @export var push_distance = 2
 var interactable = false
 var player: CharacterBody3D
+@export var grid_location: Vector2
 
 func _on_area_3d_body_entered(body:Node3D):
 	if body.get_name() == "Player":
@@ -20,17 +20,16 @@ func _on_area_3d_body_exited(body:Node3D):
 
 func _process(_delta):
 	if Input.is_action_just_pressed("interact") and interactable:
-		var directionVector = Vector3.ZERO
-		var deltaVector = Vector3.ZERO
+		# Signal to the puzzle manager that this cube needs to move
+		if true:
+			var directionVector = Vector3.ZERO
+			var deltaVector = Vector3.ZERO
 
-		deltaVector = player.position - position
-		var opposingAxis = deltaVector.abs().max_axis_index()
+			deltaVector = position - player.position
+			var opposingAxis = deltaVector.abs().max_axis_index()
 
-		directionVector[opposingAxis] = deltaVector[opposingAxis]
-		directionVector = directionVector.normalized() * push_distance * -1
+			directionVector[opposingAxis] = deltaVector[opposingAxis]
+			directionVector = directionVector.normalized() * push_distance
 
-		print(deltaVector)
-		print(directionVector)
-
-		var tween = create_tween()
-		tween.tween_property(self, "position", position + directionVector, 0.3)
+			var tween = create_tween()
+			tween.tween_property(self, "position", position + directionVector, 0.3)

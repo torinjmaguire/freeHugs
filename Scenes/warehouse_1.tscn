@@ -1,9 +1,10 @@
-[gd_scene load_steps=31 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=32 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_io64e"]
 [ext_resource type="PackedScene" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
-[ext_resource type="PackedScene" path="res://Scenes/push_puzzle_manager.tscn" id="2_w747d"]
+[ext_resource type="PackedScene" uid="uid://dbpn72r5ayuj6" path="res://Scenes/push_puzzle_manager.tscn" id="2_w747d"]
 [ext_resource type="Script" path="res://Scripts/sweep_pivot.gd" id="3_eu65r"]
+[ext_resource type="Resource" uid="uid://bdk0p7yscv5qo" path="res://Resources/warehouse_2_push_puzzle.csv" id="3_s3ck7"]
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ub6o"]
@@ -127,14 +128,15 @@ transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.76771, 2
 size = Vector3(0.2, 6, 3.5)
 
 [node name="PushPuzzleManager" parent="Fourth level" instance=ExtResource("2_w747d")]
+puzzle_data_path = ExtResource("3_s3ck7")
 
-[node name="Pushable Box" parent="Fourth level" instance=ExtResource("2_1bnhy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -9)
-
-[node name="Pushable Box2" parent="Fourth level" instance=ExtResource("2_1bnhy")]
+[node name="Pushable Box2" parent="Fourth level/PushPuzzleManager" instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -12)
 
-[node name="Pushable Box3" parent="Fourth level" instance=ExtResource("2_1bnhy")]
+[node name="Pushable Box" parent="Fourth level/PushPuzzleManager" instance=ExtResource("2_1bnhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -9)
+
+[node name="Pushable Box3" parent="Fourth level/PushPuzzleManager" instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -15)
 
 [node name="Big Box" type="StaticBody3D" parent="Fourth level"]

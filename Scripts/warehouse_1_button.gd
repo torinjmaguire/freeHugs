@@ -1,4 +1,4 @@
 extends Button
 
 func _pressed():
-	LevelManager.switchLevel(LevelManager.levelPaths.warehouse1)
+	LevelManager.switchLevel(LevelManager.WAREHOUSE_1_PATH)
