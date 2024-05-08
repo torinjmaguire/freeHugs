@@ -1,11 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://rir7r2m4d14d"]
 
 [ext_resource type="Script" path="res://Scripts/pushable_box.gd" id="1_x8foh"]
+[ext_resource type="PackedScene" uid="uid://cyyje661ljl3v" path="res://Resources/cardboard_box.glb" id="2_e82i5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_116in"]
-size = Vector3(2, 2, 2)
-
-[sub_resource type="BoxMesh" id="BoxMesh_s5gh8"]
 size = Vector3(2, 2, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_6ro0x"]
@@ -18,8 +16,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("BoxShape3D_116in")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("BoxMesh_s5gh8")
+[node name="cardboard_box" parent="." instance=ExtResource("2_e82i5")]
 
 [node name="Area3D" type="Area3D" parent="."]
 
