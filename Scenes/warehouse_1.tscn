@@ -1,9 +1,8 @@
-[gd_scene load_steps=33 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=30 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_io64e"]
 [ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
 [ext_resource type="PackedScene" uid="uid://dbpn72r5ayuj6" path="res://Scenes/push_puzzle_manager.tscn" id="2_w747d"]
-[ext_resource type="Script" path="res://Scripts/sweep_pivot.gd" id="3_eu65r"]
 [ext_resource type="Resource" uid="uid://bdk0p7yscv5qo" path="res://Resources/warehouse_2_push_puzzle.csv" id="3_s3ck7"]
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
 [ext_resource type="PackedScene" uid="uid://chtnxm2mi513v" path="res://Scenes/level_transition.tscn" id="6_ev7cs"]
@@ -57,12 +56,6 @@ size = Vector3(6, 6, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s588o"]
 size = Vector3(6, 6, 6)
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_1p34l"]
-height = 10.0
-
-[sub_resource type="CylinderMesh" id="CylinderMesh_i8r75"]
-height = 10.0
 
 [sub_resource type="BoxMesh" id="BoxMesh_ux3x5"]
 size = Vector3(4, 2, 8)
@@ -270,20 +263,6 @@ shape = SubResource("SphereShape3D_5ub6o")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="First level/Collectable2"]
 mesh = SubResource("SphereMesh_kujh8")
-
-[node name="SweepPivot" type="Marker3D" parent="First level"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 98, -15)
-script = ExtResource("3_eu65r")
-
-[node name="Sweeper" type="CharacterBody3D" parent="First level/SweepPivot"]
-transform = Transform3D(-1.74846e-07, 4, 0, -4, -1.74846e-07, 0, 0, 0, 4, 0, -66, 0)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="First level/SweepPivot/Sweeper"]
-shape = SubResource("CylinderShape3D_1p34l")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="First level/SweepPivot/Sweeper"]
-mesh = SubResource("CylinderMesh_i8r75")
 
 [node name="Low Box" type="StaticBody3D" parent="First level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 31.5, -18.5115)
