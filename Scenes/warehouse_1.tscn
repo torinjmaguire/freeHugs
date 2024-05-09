@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=33 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_io64e"]
 [ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://Scripts/sweep_pivot.gd" id="3_eu65r"]
 [ext_resource type="Resource" uid="uid://bdk0p7yscv5qo" path="res://Resources/warehouse_2_push_puzzle.csv" id="3_s3ck7"]
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
+[ext_resource type="PackedScene" uid="uid://chtnxm2mi513v" path="res://Scenes/level_transition.tscn" id="6_ev7cs"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ub6o"]
 radius = 1.0
@@ -364,6 +365,13 @@ mesh = SubResource("BoxMesh_nw7no")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Floor level/Huge Box"]
 shape = SubResource("BoxShape3D_0n7dh")
 
+[node name="LevelTransition" parent="Floor level" instance=ExtResource("6_ev7cs")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32, 29, 0)
+level_path = "res://Scenes/warehouse_2.tscn"
+
+[node name="CollisionShape3D" parent="Floor level/LevelTransition" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, -17)
+
 [node name="Shelves" type="CSGCombiner3D" parent="."]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 use_collision = true
@@ -430,3 +438,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 82.2444, -16.2128)
 [connection signal="body_entered" from="Fourth level/Collectable3" to="Fourth level/Collectable3" method="_on_body_entered"]
 [connection signal="body_entered" from="Second level/Collectable" to="Second level/Collectable" method="_on_body_entered"]
 [connection signal="body_entered" from="First level/Collectable2" to="First level/Collectable2" method="_on_body_entered"]
+
+[editable path="Floor level/LevelTransition"]
