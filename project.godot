@@ -26,6 +26,10 @@ window/size/mode=2
 
 enabled=PackedStringArray("res://addons/csv-data-importer/plugin.cfg")
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 move_forward={
