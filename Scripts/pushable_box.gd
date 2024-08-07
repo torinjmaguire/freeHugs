@@ -1,35 +1,58 @@
 extends CharacterBody3D
 
-# Player presses e to interact with nearby object
-# Pressing e signals to the nearby object
-# Object is pushed if possible in a cardinal direction
-
-@export var push_distance = 2
-var interactable = false
+@export var push_distance := 2
+var in_push_range := false
 var player: CharacterBody3D
-@export var grid_location: Vector2
+@export var pushable_area: Area3D
 
-func _on_area_3d_body_entered(body:Node3D):
+func _init() -> void:
+	# Use global position as our default position
+	self.top_level = true
+
+func is_move_in_bounds(point: Vector3, area: Area3D) -> bool:
+	var space_state: PhysicsDirectSpaceState3D = get_world_3d().direct_space_state
+	var params: PhysicsPointQueryParameters3D = PhysicsPointQueryParameters3D.new()
+	params.position = point
+	params.collide_with_areas = true
+	params.collide_with_bodies = false
+	var results: Array = space_state.intersect_point(params)
+	
+	# Check every area our point is in to see if our bounding area is one of them
+	if results.any(func(dict: Dictionary) -> bool: return dict.rid == area.get_rid()):
+		return true
+	else:
+		return false
+
+func _on_area_3d_body_entered(body:Node3D) -> void:
 	if body.get_name() == "Player":
 		player = body
-		interactable = true
+		in_push_range = true
 
-func _on_area_3d_body_exited(body:Node3D):
+func _on_area_3d_body_exited(body:Node3D) -> void:
 	if body.get_name() == "Player":
-		interactable = false
+		in_push_range = false
+		
+func push_box() -> void:
+	var box_position := position
+	var player_position := player.global_position
+	var direction := box_position.direction_to(player_position)
+	
+	# Isolate the axis that the player is trying to push along
+	direction.y = 0
+	if direction.abs().x < direction.abs().z:
+		direction.x = 0
+	else:
+		direction.z = 0
+	
+	# Adding 1 to account for the width of the cubes
+	direction = direction.normalized() * (push_distance + 1) * -1
+	var destination: Vector3 = direction + position
+	
+	if is_move_in_bounds(destination, pushable_area):
+		var tween: Tween = create_tween()
+		tween.tween_property(self, "position", destination, 0.3)
 
-func _process(_delta):
-	if Input.is_action_just_pressed("interact") and interactable:
-		# Signal to the puzzle manager that this cube needs to move
-		if true:
-			var directionVector = Vector3.ZERO
-			var deltaVector = Vector3.ZERO
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("interact") and in_push_range:
+		push_box()
 
-			deltaVector = position - player.position
-			var opposingAxis = deltaVector.abs().max_axis_index()
-
-			directionVector[opposingAxis] = deltaVector[opposingAxis]
-			directionVector = directionVector.normalized() * push_distance
-
-			var tween = create_tween()
-			tween.tween_property(self, "position", position + directionVector, 0.3)

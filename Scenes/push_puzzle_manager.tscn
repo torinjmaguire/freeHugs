@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbpn72r5ayuj6"]
-
-[ext_resource type="Script" path="res://Scripts/push_puzzle_manager.gd" id="1_usdg2"]
-
-[node name="PushPuzzleManager" type="Node3D"]
-script = ExtResource("1_usdg2")

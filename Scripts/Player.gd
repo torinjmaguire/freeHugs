@@ -1,11 +1,11 @@
 extends CharacterBody3D
 
-@export var speed = 20.0
-@export var jump_velocity = 15
+@export var speed: float = 20.0
+@export var jump_velocity: float = 15
 
-var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/3d/default_gravity")
 
-func _physics_process(delta):
+func _physics_process(delta: float) -> void:
 	
 	# Reset if we fall off the map
 	if position.y < 0:
@@ -19,8 +19,8 @@ func _physics_process(delta):
 		velocity.y = jump_velocity
 
 	# Lateral Movement
-	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
-	var direction = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	var input_dir: Vector2 = Input.get_vector("move_left", "move_right", "move_forward", "move_backwards")
+	var direction: Vector3 = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * speed
 		velocity.z = direction.z * speed

@@ -1,9 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=29 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_io64e"]
 [ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
-[ext_resource type="PackedScene" uid="uid://dbpn72r5ayuj6" path="res://Scenes/push_puzzle_manager.tscn" id="2_w747d"]
-[ext_resource type="Resource" uid="uid://bdk0p7yscv5qo" path="res://Resources/warehouse_2_push_puzzle.csv" id="3_s3ck7"]
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
 [ext_resource type="PackedScene" uid="uid://chtnxm2mi513v" path="res://Scenes/level_transition.tscn" id="6_ev7cs"]
 
@@ -32,6 +30,9 @@ size = Vector3(6, 6, 6)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xnv0j"]
 size = Vector3(6, 6, 6)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_iiwyc"]
+size = Vector3(12, 10, 11)
 
 [sub_resource type="BoxMesh" id="BoxMesh_jw6jm"]
 size = Vector3(6, 18, 6)
@@ -121,18 +122,6 @@ size = Vector3(3.5, 5.5, 2.82141)
 transform = Transform3D(0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, 0.866025, 2.76771, 2.40046, 1.47716)
 size = Vector3(0.2, 6, 3.5)
 
-[node name="PushPuzzleManager" parent="Fourth level" instance=ExtResource("2_w747d")]
-puzzle_data_path = ExtResource("3_s3ck7")
-
-[node name="Pushable Box2" parent="Fourth level/PushPuzzleManager" instance=ExtResource("2_1bnhy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -12)
-
-[node name="Pushable Box" parent="Fourth level/PushPuzzleManager" instance=ExtResource("2_1bnhy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -9)
-
-[node name="Pushable Box3" parent="Fourth level/PushPuzzleManager" instance=ExtResource("2_1bnhy")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 81.5, -15)
-
 [node name="Big Box" type="StaticBody3D" parent="Fourth level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27, 84.5, -18.4925)
 
@@ -151,6 +140,25 @@ mesh = SubResource("BoxMesh_usk2f")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Small Rectangle"]
 shape = SubResource("BoxShape3D_xnv0j")
+
+[node name="Area3D" type="Area3D" parent="Fourth level"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 87, -12)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -4.5, 0)
+shape = SubResource("BoxShape3D_iiwyc")
+
+[node name="Pushable Box2" parent="Fourth level/Area3D" node_paths=PackedStringArray("pushable_area") instance=ExtResource("2_1bnhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, -3)
+pushable_area = NodePath("..")
+
+[node name="Pushable Box" parent="Fourth level/Area3D" node_paths=PackedStringArray("pushable_area") instance=ExtResource("2_1bnhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
+pushable_area = NodePath("..")
+
+[node name="Pushable Box3" parent="Fourth level/Area3D" node_paths=PackedStringArray("pushable_area") instance=ExtResource("2_1bnhy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 3)
+pushable_area = NodePath("..")
 
 [node name="Third level" type="Node3D" parent="."]
 
@@ -412,7 +420,7 @@ size = Vector3(30, 1, 5)
 transform = Transform3D(0.707107, -3.09086e-08, 0.707107, -0.612372, 0.5, 0.612372, -0.353553, -0.866025, 0.353553, 37, 133, 29)
 
 [node name="Player" parent="." instance=ExtResource("4_fr6vk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 82.2444, -16.2128)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 82.2443, -16.2128)
 
 [connection signal="body_entered" from="Fourth level/Collectable3" to="Fourth level/Collectable3" method="_on_body_entered"]
 [connection signal="body_entered" from="Second level/Collectable" to="Second level/Collectable" method="_on_body_entered"]
