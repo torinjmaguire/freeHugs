@@ -1,8 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=32 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_io64e"]
 [ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
+[ext_resource type="PackedScene" uid="uid://mh0a24ca4s24" path="res://Resources/giraffeBox.glb" id="3_g0xwn"]
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
+[ext_resource type="PackedScene" uid="uid://cyyje661ljl3v" path="res://Resources/cardboard_box.glb" id="4_rsxbu"]
+[ext_resource type="PackedScene" uid="uid://vh6i06jqajv6" path="res://Resources/soccerBox.glb" id="5_tnguy"]
 [ext_resource type="PackedScene" uid="uid://chtnxm2mi513v" path="res://Scenes/level_transition.tscn" id="6_ev7cs"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ub6o"]
@@ -153,15 +156,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, -3)
 player = NodePath("../../../Player")
 pushable_area = NodePath("..")
 
+[node name="giraffeBox" parent="Fourth level/Area3D/Pushable Box2" instance=ExtResource("3_g0xwn")]
+
 [node name="Pushable Box" parent="Fourth level/Area3D" node_paths=PackedStringArray("player", "pushable_area") instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
 player = NodePath("../../../Player")
 pushable_area = NodePath("..")
 
+[node name="cardboard_box" parent="Fourth level/Area3D/Pushable Box" instance=ExtResource("4_rsxbu")]
+
 [node name="Pushable Box3" parent="Fourth level/Area3D" node_paths=PackedStringArray("player", "pushable_area") instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 3)
 player = NodePath("../../../Player")
 pushable_area = NodePath("..")
+
+[node name="soccerBox" parent="Fourth level/Area3D/Pushable Box3" instance=ExtResource("5_tnguy")]
 
 [node name="Third level" type="Node3D" parent="."]
 
