@@ -1,12 +1,14 @@
-[gd_scene load_steps=32 format=3 uid="uid://cm510ym0spcda"]
+[gd_scene load_steps=33 format=3 uid="uid://cm510ym0spcda"]
 
 [ext_resource type="Script" path="res://Scripts/collectable.gd" id="1_io64e"]
 [ext_resource type="PackedScene" uid="uid://rir7r2m4d14d" path="res://Scenes/pushable_box.tscn" id="2_1bnhy"]
+[ext_resource type="PackedScene" uid="uid://dqlpv8vrqb7r0" path="res://Resources/mediumCrate.glb" id="2_tow8i"]
 [ext_resource type="PackedScene" uid="uid://mh0a24ca4s24" path="res://Resources/giraffeBox.glb" id="3_g0xwn"]
 [ext_resource type="PackedScene" uid="uid://bhnuo5aqppqgl" path="res://Scenes/player.tscn" id="4_fr6vk"]
 [ext_resource type="PackedScene" uid="uid://cyyje661ljl3v" path="res://Resources/cardboard_box.glb" id="4_rsxbu"]
 [ext_resource type="PackedScene" uid="uid://vh6i06jqajv6" path="res://Resources/soccerBox.glb" id="5_tnguy"]
 [ext_resource type="PackedScene" uid="uid://chtnxm2mi513v" path="res://Scenes/level_transition.tscn" id="6_ev7cs"]
+[ext_resource type="PackedScene" uid="uid://ojxigbx368bq" path="res://Resources/teapotBox.glb" id="7_2qtp8"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_5ub6o"]
 radius = 1.0
@@ -15,9 +17,6 @@ radius = 1.0
 
 [sub_resource type="SphereMesh" id="SphereMesh_kujh8"]
 material = SubResource("StandardMaterial3D_5igwj")
-
-[sub_resource type="BoxMesh" id="BoxMesh_4cbl4"]
-size = Vector3(2, 4, 2)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lnsgn"]
 size = Vector3(2, 4, 2)
@@ -102,11 +101,11 @@ mesh = SubResource("SphereMesh_kujh8")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30, 82.5, -8.52035)
 metadata/_edit_group_ = true
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Fourth level/Tiny Rectangle"]
-mesh = SubResource("BoxMesh_4cbl4")
-
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Fourth level/Tiny Rectangle"]
 shape = SubResource("BoxShape3D_lnsgn")
+
+[node name="mediumCrate" parent="Fourth level/Tiny Rectangle" instance=ExtResource("2_tow8i")]
+transform = Transform3D(-4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Starting Box" type="CSGCombiner3D" parent="Fourth level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51, 81, -15)
@@ -211,8 +210,8 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Third level/Push Box4"]
 shape = SubResource("BoxShape3D_116in")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Third level/Push Box4"]
-mesh = SubResource("BoxMesh_s5gh8")
+[node name="teapotBox" parent="Third level/Push Box4" instance=ExtResource("7_2qtp8")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Push Box5" type="CharacterBody3D" parent="Third level"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56, 61.5, -10)
