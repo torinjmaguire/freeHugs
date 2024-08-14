@@ -148,16 +148,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 87, -12)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, -4.5, 0)
 shape = SubResource("BoxShape3D_iiwyc")
 
-[node name="Pushable Box2" parent="Fourth level/Area3D" node_paths=PackedStringArray("pushable_area") instance=ExtResource("2_1bnhy")]
+[node name="Pushable Box2" parent="Fourth level/Area3D" node_paths=PackedStringArray("player", "pushable_area") instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, -3)
+player = NodePath("../../../Player")
 pushable_area = NodePath("..")
 
-[node name="Pushable Box" parent="Fourth level/Area3D" node_paths=PackedStringArray("pushable_area") instance=ExtResource("2_1bnhy")]
+[node name="Pushable Box" parent="Fourth level/Area3D" node_paths=PackedStringArray("player", "pushable_area") instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 0)
+player = NodePath("../../../Player")
 pushable_area = NodePath("..")
 
-[node name="Pushable Box3" parent="Fourth level/Area3D" node_paths=PackedStringArray("pushable_area") instance=ExtResource("2_1bnhy")]
+[node name="Pushable Box3" parent="Fourth level/Area3D" node_paths=PackedStringArray("player", "pushable_area") instance=ExtResource("2_1bnhy")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5.5, 3)
+player = NodePath("../../../Player")
 pushable_area = NodePath("..")
 
 [node name="Third level" type="Node3D" parent="."]
